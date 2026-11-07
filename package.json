@@ -1,0 +1,12 @@
+{
+  "name": "hadiya-hrms",
+  "version": "1.0.0",
+  "description": "Hadiya Zone Science & IT Department — HRMS",
+  "private": true,
+  "scripts": {
+    "dev": "cd server && npm run dev",
+    "start": "cd server && npm start",
+    "migrate": "cd server && node src/database/migrate.js",
+    "install:all": "cd server && npm install"
+  }
+}
