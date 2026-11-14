@@ -1,0 +1,495 @@
+/* ==========================================
+   HADIYA HRMS - PROFESSIONAL LOGIN DESIGN
+   ENHANCED INTERACTIVE HOVER EFFECTS
+========================================== */
+
+.employee-login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* LEFT GREEN PANEL */
+
+.employee-login-page::before {
+  content: "Welcome to the Human Resource Management System Employe Portal";
+  white-space: pre-line;
+
+  position: relative;
+  z-index: 0;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 12% 70px 8%;
+  box-sizing: border-box;
+
+  color: #ffffff;
+  text-align: left;
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1.7;
+
+  background:
+    radial-gradient(circle at 25% 35%, rgba(255,255,255,0.10), transparent 3%),
+    radial-gradient(circle at 75% 65%, rgba(255,255,255,0.08), transparent 5%),
+    linear-gradient(145deg, #059669, #047857);
+
+  border-radius: 0 48% 48% 0 / 0 50% 50% 0;
+  box-shadow: 10px 0 0 rgba(5, 150, 105, 0.12);
+
+  /* interactive transitions */
+  transition: box-shadow 0.35s ease, filter 0.25s ease;
+}
+
+/* Left panel glow when hovering the page */
+
+.employee-login-page:hover::before {
+  box-shadow:
+    12px 0 24px rgba(5, 150, 105, 0.28),
+    0 0 0 2px rgba(255, 255, 255, 0.12) inset;
+  filter: brightness(1.03);
+}
+
+/* LOGIN CARD */
+
+.employee-login-card {
+  width: 100%;
+  max-width: 560px;
+  min-height: auto;
+  margin: auto;
+  padding: 55px 65px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.employee-login-card:hover {
+  box-shadow: 0 20px 40px -14px rgba(5, 150, 105, 0.22);
+  transform: scale(1.004);
+}
+
+/* HIDE OLD LOGO */
+
+.employee-login-logo {
+  display: none;
+}
+
+/* LOGIN HEADING */
+
+.employee-login-card h1 {
+  margin: 0 0 12px;
+  color: #1e293b;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.employee-login-card h1:hover {
+  color: #059669;
+  text-shadow: 0 2px 10px rgba(5, 150, 105, 0.22);
+}
+
+/* SUBTITLE */
+
+.employee-login-subtitle {
+  color: #64748b;
+  font-size: 15px;
+  margin: 0 0 22px;
+
+  transition: color 0.25s ease;
+}
+
+.employee-login-card:hover .employee-login-subtitle {
+  color: #475569;
+}
+
+/* SECURITY MESSAGE */
+
+.employee-login-security {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 25px;
+  padding: 12px 14px;
+
+  color: #047857;
+  background: #ecfdf5;
+  border: 1px solid #d1fae5;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: background 0.25s ease, border-color 0.25s ease,
+              box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.employee-login-security:hover {
+  background: #d1fae5;
+  border-color: #059669;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.18);
+  transform: translateX(3px);
+}
+
+/* ERROR MESSAGE */
+
+.employee-login-error {
+  margin-bottom: 18px;
+  padding: 12px 14px;
+
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+
+  font-size: 13px;
+
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.employee-login-error:hover {
+  background: #fee2e2;
+  border-color: #f87171;
+}
+
+/* LOGIN FORM */
+
+.employee-login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 100%;
+}
+
+/* LABEL */
+
+.employee-login-card .module-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.employee-login-card .module-field > span {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.employee-login-card .module-field:hover > span {
+  color: #059669;
+  transform: translateX(2px);
+}
+
+/* INPUT CONTAINER */
+
+.employee-login-card .module-input-icon {
+  width: 100%;
+  height: 49px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 0 14px;
+
+  background: #ffffff;
+  border: 1px solid #dce3e8;
+  border-radius: 7px;
+
+  color: #64748b;
+
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+              background 0.25s ease, transform 0.25s ease;
+}
+
+/* input hover state */
+
+.employee-login-card .module-input-icon:hover {
+  border-color: #059669;
+  background: #f8fffe;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.08);
+  transform: translateY(-1px);
+}
+
+/* focus-within keeps stronger highlight */
+
+.employee-login-card .module-input-icon:focus-within {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.14);
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* icon inside input */
+
+.employee-login-card .module-input-icon i {
+  color: #64748b;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.employee-login-card .module-input-icon:hover i {
+  color: #059669;
+  transform: scale(1.12) rotate(3deg);
+}
+
+/* INPUT */
+
+.employee-login-card .module-input-icon input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  background: transparent !important;
+  color: #1e293b;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition: color 0.2s ease;
+}
+
+.employee-login-card .module-input-icon input::placeholder {
+  color: #a0aab7;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.employee-login-card .module-input-icon:hover input::placeholder {
+  color: #059669;
+  padding-left: 3px;
+}
+
+/* PASSWORD VISIBILITY BUTTON */
+
+.employee-login-card .module-input-icon button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  color: #64748b;
+
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+
+  transition: color 0.25s ease, background 0.25s ease,
+              transform 0.25s ease;
+}
+
+.employee-login-card .module-input-icon button:hover {
+  color: #059669;
+  background: #ecfdf5;
+  transform: scale(1.15) rotate(8deg);
+}
+
+.employee-login-card .module-input-icon button:active {
+  transform: scale(0.92);
+}
+
+/* LOGIN BUTTON */
+
+.employee-login-card .common-button.primary {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  background: #059669;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition: background 0.25s ease, transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+/* shiny sweep on hover */
+
+.employee-login-card .common-button.primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.28),
+    transparent
+  );
+  transition: left 0.55s ease;
+}
+
+.employee-login-card .common-button.primary:hover::after {
+  left: 120%;
+}
+
+.employee-login-card .common-button.primary:hover {
+  background: #047857;
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 10px 22px -6px rgba(5, 150, 105, 0.42);
+}
+
+.employee-login-card .common-button.primary:active {
+  transform: translateY(0) scale(0.99);
+  background: #036f4b;
+  box-shadow: 0 3px 10px rgba(5, 150, 105, 0.45);
+}
+
+/* button icon motion */
+
+.employee-login-card .common-button.primary i {
+  transition: transform 0.25s ease;
+}
+
+.employee-login-card .common-button.primary:hover i {
+  transform: translateX(4px) scale(1.08);
+}
+
+/* FOOTER */
+
+.employee-login-card > small {
+  margin-top: 23px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.employee-login-card:hover > small {
+  color: #475569;
+  letter-spacing: 0.1px;
+}
+
+/* footer links hover */
+
+.employee-login-card > small a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.employee-login-card > small a:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE TABLET */
+
+@media (max-width: 900px) {
+  .employee-login-page {
+    grid-template-columns: 38% 62%;
+  }
+
+  .employee-login-page::before {
+    font-size: 23px;
+    padding: 35px;
+  }
+
+  .employee-login-card {
+    padding: 40px 30px;
+  }
+
+  .employee-login-card:hover {
+    box-shadow: 0 16px 32px -12px rgba(5, 150, 105, 0.2);
+  }
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 650px) {
+  .employee-login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px 16px;
+    background: #f3f7f5;
+  }
+
+  .employee-login-page::before {
+    min-height: 120px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: none;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  /* disable heavy hover glow on mobile banner */
+
+  .employee-login-page:hover::before {
+    box-shadow: none;
+    filter: none;
+  }
+
+  .employee-login-card {
+    max-width: 480px;
+    width: 100%;
+    min-height: auto;
+    padding: 30px 23px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  }
+
+  .employee-login-card:hover {
+    box-shadow: 0 14px 32px -10px rgba(5, 150, 105, 0.22);
+    transform: scale(1.002);
+  }
+}
+
+@media (max-width: 380px) {
+  .employee-login-card {
+    padding: 25px 17px;
+  }
+
+  .employee-login-card h1 {
+    font-size: 25px;
+  }
+}
