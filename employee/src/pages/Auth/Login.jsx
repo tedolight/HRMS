@@ -122,11 +122,11 @@ export default function Login({ onLogin }) {
 
           <button className="common-button primary" type="submit">
             <LogIn size={18} />
-            Sign In
+            Login In
           </button>
         </form>
 
-        <small>Authorized employees only.</small>
+      
       </section>
     </main>
   );
