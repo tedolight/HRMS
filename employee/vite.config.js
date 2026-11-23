@@ -5,4 +5,6 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Prepare the deferred PDF dependency before sign-in so its first use does not reload the demo session.
+  optimizeDeps: { include: ['jspdf'] },
 })

@@ -1,0 +1,160 @@
+/* Single admin stylesheet: Tailwind setup, theme, and essential global defaults.
+   Preflight is omitted to preserve the existing native controls and typography. */
+@import 'tailwindcss/theme.css' layer(theme) prefix(tw);
+
+
+/* Tailwind v4 needs an explicit link to a JavaScript configuration file. */
+@config '../../tailwind.config.js';
+
+/* Scan admin JSX for utilities, including controls shared across pages. */
+@source '../pages';
+@source '../components';
+@source '../layouts';
+@source '../App.jsx';
+
+/* Match the original inclusive mobile breakpoint and hover behavior exactly. */
+@custom-variant login-mobile (@media (max-width: 480px));
+@custom-variant hover (&:hover);
+
+/* Keep shared card surfaces below explicit page utilities. */
+@custom-variant card-surface (:where(&));
+
+/* Let attendance and leave retain their contextual footer spacing. */
+@custom-variant shared-footer (:where(&));
+
+/* Keep shared pagination defaults below contextual attendance and leave spacing. */
+@custom-variant pagination (:where(&));
+
+/* Shared defaults yield to explicit page utilities and contextual overrides. */
+@custom-variant shared-base (:where(&));
+
+/* Existing theme tokens are shared by prefixed Tailwind utilities. */
+:root {
+  font-family:
+    'Segoe UI',
+    -apple-system,
+    BlinkMacSystemFont,
+    Arial,
+    sans-serif;
+  color: #092a32;
+  background: #f3f8f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --surface: #fff;
+  --page-bg: #f3f8f9;
+  --search-bg: #f2f6fa;
+  --sidebar-bg: #0c3333;
+  --sidebar-bottom: #082b2c;
+  --nav-active: #1a6259;
+  --sidebar-text: #d8e7e7;
+  --sidebar-muted: #9cb9bd;
+  --primary: #087f6d;
+  --primary-hover: #066756;
+  --brand: #10b981;
+  --text-primary: #092a32;
+  --text-secondary: #466b82;
+  --text-muted: #628097;
+  --border: #e3eef2;
+  --divider: #ecf2f5;
+  --icon-bg: #e0f5ef;
+  --sidebar-width: 252px;
+  --header-height: 72px;
+  --card-radius: 11px;
+  --card-shadow: 0 2px 8px rgba(9, 42, 50, 0.025);
+}
+
+/* Global typography, native controls, accessibility, and theme breakpoints. */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  font-size: 14px;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+:focus-visible {
+  outline: 2px solid #098d79;
+  outline-offset: 4px;
+}
+svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: clamp(23px, 1.85vw, 31px);
+  letter-spacing: -0.8px;
+  line-height: 1.25;
+  font-weight: 650;
+}
+h2 {
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.2px;
+}
+h3 {
+  font-size: 17px;
+  font-weight: 650;
+}
+@media (1280px <= width < 1440px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+}
+@media (1024px <= width < 1280px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+}
+@media (width < 768px) {
+  :root {
+    --header-height: 65px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+/* Emit unlayered page utilities after the defaults, preserving their priority. */
+@tailwind utilities source(none);

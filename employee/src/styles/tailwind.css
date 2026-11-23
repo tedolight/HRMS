@@ -1,0 +1,43 @@
+/* Tailwind only: theme aliases and utility variants. Page/component styles live in JSX. */
+@import "tailwindcss";
+@source "../";
+/* Defaults and shared utilities yield to explicit page utilities. */
+@layer utilities {
+  @layer employee-defaults, employee-components;
+}
+@custom-variant employee-global {
+  @layer employee-defaults {
+    :where(&) {
+      @slot;
+    }
+  }
+}
+@custom-variant employee-base {
+  @layer employee-components {
+    & {
+      @slot;
+    }
+  }
+}
+@custom-variant employee-page (&);
+@custom-variant screen-reduced-motion (@media (prefers-reduced-motion: reduce));
+@custom-variant screen-compact (@media (1024px <= width < 1440px));
+@custom-variant screen-max-1280 (@media (max-width: 1280px));
+@custom-variant screen-max-1200 (@media (max-width: 1200px));
+@custom-variant screen-max-1100 (@media (max-width: 1100px));
+@custom-variant screen-max-1024 (@media (max-width: 1024px));
+@custom-variant screen-max-900 (@media (max-width: 900px));
+@custom-variant screen-max-768 (@media (max-width: 768px));
+@custom-variant screen-below-768 (@media (width < 768px));
+@custom-variant screen-max-700 (@media (max-width: 700px));
+@custom-variant screen-max-480 (@media (max-width: 480px));
+@theme inline {
+  --color-page: var(--page-bg);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border);
+}
